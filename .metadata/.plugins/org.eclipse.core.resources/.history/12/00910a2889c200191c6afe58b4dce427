@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>Todo</title>
+</head>
+<body>
+	<div>
+	${name} you can add new item here:<br>
+	<div>
+	<form method="POST">
+		Description: <input type="text" name="desc" />
+		<input type="submit" value="Save">
+	</form>
+	</div>
+	Click <a href="/list-todo">here</a> to see your todo list.
+	</div>
+</body>
+</html>

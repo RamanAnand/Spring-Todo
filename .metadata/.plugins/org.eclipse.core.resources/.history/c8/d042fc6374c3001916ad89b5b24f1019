@@ -1,0 +1,42 @@
+package com.bizpal.springboottutorial.service;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.bizpal.springboottutorial.model.Todo;
+
+@Service
+public class TodoService {
+	
+	private static List<Todo> todos = new ArrayList<Todo>();
+	
+	private static int todoCount =3;
+	static {
+		todos.add(new Todo(1, "raman", "learn spring", new Date(), false));
+		todos.add(new Todo(2, "raman", "learn hibernate", new Date(), false));
+		todos.add(new Todo(3, "raman", "learn microservices", new Date(), false));
+	}
+	
+	public void addTodo(String user, String description) {
+		todos.add(new Todo(++todoCount, user, description, new Date(), false));
+	}
+	
+	public List<Todo> getTodo(String user) {
+		return todos;
+	}
+
+	public void deleteTodo(int id) {
+		Iterator iterator = todos.iterator();
+		while(iterator.hasNext()) {
+			Todo todo = (Todo) iterator.next();
+			if(todo.getId()==id)
+				iterator.remove();
+		}
+		todos.remove()
+	}
+
+}

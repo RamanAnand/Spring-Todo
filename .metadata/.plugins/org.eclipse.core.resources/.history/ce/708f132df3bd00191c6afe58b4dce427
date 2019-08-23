@@ -1,0 +1,5 @@
+package com.bizpal.springboottutorial.controller;
+
+public final class LoginController {
+
+}

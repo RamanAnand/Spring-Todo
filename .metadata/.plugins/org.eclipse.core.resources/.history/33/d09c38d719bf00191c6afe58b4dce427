@@ -1,0 +1,9 @@
+package com.bizpal.springboottutorial.service;
+
+public class LoginService {
+
+	public boolean validateUser (String userid, String password) {
+		return userid.equalsIgnoreCase("test") 
+				&& password.equalsIgnoreCase("test");
+	}
+}

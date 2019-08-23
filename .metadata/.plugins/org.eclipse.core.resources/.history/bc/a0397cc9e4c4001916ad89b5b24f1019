@@ -1,0 +1,51 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<html>
+<head>
+<title>Todo</title>
+<link href="webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<br>
+		<div class="alert alert-info">
+		${name} you can add new item here:
+		</div>
+		
+		<div class="container">
+		<form method="POST" >
+			<div class="form-group">
+				<label for="desc">Description:</label> 
+				<input required="required" type="text" class="form-control" id="desc" name="desc" placeholder="Enter todo">
+			</div>
+			<button type="submit" class="btn btn-success">Submit</button>
+		</form></div>
+		
+		
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Description</th>
+					<th>user</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${todos }" var="todo">
+					<tr>
+						<td>${todo.id }</td>
+						<td>${todo.description }</td>
+						<td>${todo.user }</td>
+						<td><a type="button" class="btn btn-warning" href="/delete-todo?id=${todo.id }">Delete</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+
+	</div>
+	<script src="webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

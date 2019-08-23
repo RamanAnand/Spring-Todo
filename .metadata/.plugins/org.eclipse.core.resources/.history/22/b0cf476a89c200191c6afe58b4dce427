@@ -1,0 +1,5 @@
+package com.bizpal.springboottutorial.controller;
+
+public class TodoController {
+
+}

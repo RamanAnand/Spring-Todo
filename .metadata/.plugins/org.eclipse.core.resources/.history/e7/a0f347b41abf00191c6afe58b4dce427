@@ -1,0 +1,10 @@
+<html>
+<head>
+<title>Login</title>
+</head>
+<body>
+	<div>
+	Welcome ${name}! Your password is ${password} 
+	</div>
+</body>
+</html>

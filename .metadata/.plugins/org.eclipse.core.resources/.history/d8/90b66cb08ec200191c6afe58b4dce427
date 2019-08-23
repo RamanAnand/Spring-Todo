@@ -1,0 +1,5 @@
+package com.bizpal.springboottutorial.model;
+
+public class Todo {
+
+}

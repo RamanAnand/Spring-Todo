@@ -1,0 +1,46 @@
+package com.bizpal.springboottutorial.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.bizpal.springboottutorial.model.Todo;
+import com.bizpal.springboottutorial.service.TodoService;
+
+@Controller
+@SessionAttributes("name")
+public class TodoController {
+	
+	@Autowired
+	TodoService service;
+	
+	@RequestMapping(value="/list-todo", method=RequestMethod.GET)
+	public String showTodos(ModelMap model) {
+		String user = (String)model.get("name");
+		List<Todo> todos = service.getTodo(user);
+		model.put("todos",todos);
+		return "list-todo";
+	}
+	
+	@RequestMapping(value="/list-todo", method=RequestMethod.POST)
+	public String addTodos(Todo todo, ModelMap model) {
+		String user = (String)model.get("name");
+		service.addTodo(user, desc);
+//		List<Todo> todos = service.getTodo(user);
+//		model.put("todos",todos);
+		return "redirect:/list-todo";
+	}
+	
+	@RequestMapping(value="/delete-todo", method=RequestMethod.GET)
+	public String deleteTodos(@RequestParam int id) {
+		service.deleteTodo(id);
+		return "redirect:/list-todo";
+	}
+
+}

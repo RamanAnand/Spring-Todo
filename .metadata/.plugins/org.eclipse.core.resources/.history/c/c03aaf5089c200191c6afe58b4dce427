@@ -1,0 +1,6 @@
+package com.bizpal.springboottutorial.service;
+
+@Service
+public class TodoService {
+
+}

@@ -1,0 +1,13 @@
+<html>
+<head>
+<title>Yahoo!!</title>
+</head>
+<body>
+	Welcome ${name }
+	<div>
+		<form>
+			Name: <input type="text" name="name" /> <input type="submit">
+		</form>
+	</div>
+</body>
+</html>
