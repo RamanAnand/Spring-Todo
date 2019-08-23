@@ -30,7 +30,14 @@ public class TodoController {
 		model.put("todos",service.getTodo(user));
 		return "list-todo";
 	}
-		
+	
+	/*
+	 * @RequestMapping(value="/add-todo", method=RequestMethod.GET) public String
+	 * showAddTodoPage(ModelMap model) { model.addAttribute("todo",new Todo());
+	 * return "add-todo"; }
+	 */
+
+	
 	@RequestMapping(value="/list-todo", method=RequestMethod.POST)
 	public String addTodos(@Valid Todo todo, BindingResult result, ModelMap model) {
 		if(result.hasErrors()) {
