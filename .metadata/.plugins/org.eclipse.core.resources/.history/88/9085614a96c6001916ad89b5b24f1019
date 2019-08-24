@@ -1,0 +1,8 @@
+package com.bizpal.springboottutorial.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller("error")
+public class ErrorController {
+
+}

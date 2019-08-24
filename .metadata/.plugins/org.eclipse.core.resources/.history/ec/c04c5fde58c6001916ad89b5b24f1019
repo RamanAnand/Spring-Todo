@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Login</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="">
+			<a class="navbar-brand" href="www.google.com">Bizpal</a>
+		</div>
+
+		<div class="navbar-collapse" id="collapsibleNavbar">
+			<ul class="nav navbar-nav">
+				<li ><a href="/">Home</a></li>
+				<li ><a href="/list-todo">Todos</a></li>
+			</ul>
+			<ul class="navbar-right nav navbar-nav">
+				<li><a href="/logout">Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		Welcome ${name}!<br> Click <a href="/list-todo">here</a> to see
+		your todo list.
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -2,3 +2,4 @@
 1566487338861	Rename resource 'list-todo2.jsp'
 1566533204718	Delete element
 1566534114429	Extract method 'getLoggedInUserName'
+1566668502048	Rename resource 'error'

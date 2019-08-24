@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Login</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<nav class="navbar  bg-light navbar-light">
+
+		<a class="navbar-brand" href="#">Bizpal</a> <img
+			src="data:image/png;base64,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"
+			alt="Logo" style="width: 40px;">
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+
+				<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="/list-todo">Todos</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		Welcome ${name}!<br> Click <a href="/list-todo">here</a> to see
+		your todo list.
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
