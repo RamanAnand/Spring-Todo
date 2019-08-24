@@ -24,4 +24,15 @@ public final class LoginController {
 		return "welcome";
 	}
 	
+	/*
+	 * @RequestMapping(value="/login", method=RequestMethod.GET) public String
+	 * loginMessage() { return "login"; }
+	 * 
+	 * @RequestMapping(value="/login", method=RequestMethod.POST) public String
+	 * showWelcomePage(ModelMap model, @RequestParam String name, @RequestParam
+	 * String password) { boolean isValidate = service.validateUser(name, password);
+	 * 
+	 * if(!isValidate) { model.put("message","Invalid Credentials"); return "login";
+	 * } model.put("name",name); return "welcome"; }
+	 */
 }

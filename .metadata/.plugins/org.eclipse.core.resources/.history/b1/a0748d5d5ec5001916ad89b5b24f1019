@@ -1,0 +1,5 @@
+package com.bizpal.springboottutorial.security;
+
+public class SecurityConfiguration {
+
+}

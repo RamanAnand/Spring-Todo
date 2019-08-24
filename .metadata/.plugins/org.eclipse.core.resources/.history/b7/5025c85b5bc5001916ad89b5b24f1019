@@ -19,9 +19,19 @@ public final class LoginController {
 	LoginService service;
 
 	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String loginMessage(ModelMap model) {
-		model.put("name","Raman");
-		return "welcome";
+	public String loginMessage() {
+		return "login";
 	}
 	
+	/*
+	 * @RequestMapping(value="/login", method=RequestMethod.GET) public String
+	 * loginMessage() { return "login"; }
+	 * 
+	 * @RequestMapping(value="/login", method=RequestMethod.POST) public String
+	 * showWelcomePage(ModelMap model, @RequestParam String name, @RequestParam
+	 * String password) { boolean isValidate = service.validateUser(name, password);
+	 * 
+	 * if(!isValidate) { model.put("message","Invalid Credentials"); return "login";
+	 * } model.put("name",name); return "welcome"; }
+	 */
 }

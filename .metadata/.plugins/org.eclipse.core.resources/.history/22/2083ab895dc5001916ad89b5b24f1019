@@ -26,23 +26,19 @@ public class TodoController {
 	@RequestMapping(value="/list-todo", method=RequestMethod.GET)
 	public String showTodos(ModelMap model) {
 		model.addAttribute("todo",new Todo());
-		String user = getLoggedInUserName(model);
+		String user = (String)model.get("name");
 		model.put("todos",service.getTodo(user));
 		return "list-todo";
-	}
-
-	private String getLoggedInUserName(ModelMap model) {
-		return (String)model.get("name");
 	}
 		
 	@RequestMapping(value="/list-todo", method=RequestMethod.POST)
 	public String addTodos(@Valid Todo todo, BindingResult result, ModelMap model) {
 		if(result.hasErrors()) {
-			String user = getLoggedInUserName(model);
+			String user = (String)model.get("name");
 			model.put("todos",service.getTodo(user));
 			return "list-todo";
 		}
-		String user = getLoggedInUserName(model);
+		String user = (String)model.get("name");
 		service.addTodo(user, todo.getDescription());
 		return "redirect:/list-todo";
 	}
@@ -57,7 +53,7 @@ public class TodoController {
 	public String showUpdatePage(@RequestParam int id, ModelMap model) {
 		Todo todo = service.retriveTodo(id);
 		model.put("todo",todo);
-		String user = getLoggedInUserName(model);
+		String user = (String)model.get("name");
 		model.put("todos",service.getTodo(user));
 		return "list-todo";
 	}
@@ -65,13 +61,13 @@ public class TodoController {
 	@RequestMapping(value="/update-todo", method=RequestMethod.POST)
 	public String updateTodo(@Valid Todo todo, BindingResult result, ModelMap model) {
 		if(result.hasErrors()) {
-			String user = getLoggedInUserName(model);
+			String user = (String)model.get("name");
 			model.put("todos",service.getTodo(user));
 			return "list-todo";
 		}
 		service.updateTodo(todo);
 		model.addAttribute("todo",new Todo());
-		String user = getLoggedInUserName(model);
+		String user = (String)model.get("name");
 		model.put("todos",service.getTodo(user));
 		return "list-todo";
 	}
